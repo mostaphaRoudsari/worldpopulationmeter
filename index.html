@@ -62,7 +62,6 @@
 		<script type="text/javascript">var switchTo5x=true;</script>
 		<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
 		<script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>
-		 
 
 		 <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
 	</head>
@@ -130,7 +129,7 @@
 			<div class="content">
 						<!-- Organize the text so it looks like a heart -->
 						<div id="delayedText1" style="opacity:0">Out of</div>
-						<strong><span id="worldpop"></span></strong>
+						<strong><span id="worldpop" style="opacity:0"></span></strong>
 						<br>
 						<div id="delayedText2" style="opacity:0">
 							people in the world
@@ -150,12 +149,13 @@
 						</div>
 
 					<script type="text/javascript">
-						$("#delayedText1").delay(500).animate({"opacity": "1"}, 700); //out of
-						$("#delayedText2").delay(2500).animate({"opacity": "1"}, 700); //people in the world
-						$("#delayedText3").delay(5000).animate({"opacity": "1"}, 700); //I
-						$("#delayedText4").delay(6000).animate({"opacity": "1"}, 700); //Choose
-						$("#delayedText5").delay(7000).animate({"opacity": "1"}, 700); //You
-						$("#delayedText6").delay(8000).animate({"opacity": "1"}, 700); //!
+						$("#worldpop").delay(500).animate({"opacity": "1"}, 700); //population
+						$("#delayedText1").delay(2500).animate({"opacity": "1"}, 700); //out of
+						$("#delayedText2").delay(4500).animate({"opacity": "1"}, 700); //people in the world
+						$("#delayedText3").delay(8000).animate({"opacity": "1"}, 700); //I
+						$("#delayedText4").delay(9000).animate({"opacity": "1"}, 700); //Choose
+						$("#delayedText5").delay(10000).animate({"opacity": "1"}, 700); //You
+						$("#delayedText6").delay(11000).animate({"opacity": "1"}, 700); //!
 					</script>
 
 			</div>
@@ -174,7 +174,7 @@
 		<!-- share this side bar-->
 		<script type="text/javascript">stLight.options({publisher: "f091e7ed-4f29-4980-a7c4-2406919bf10b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
 		<script>
-			var options={ "publisher": "f091e7ed-4f29-4980-a7c4-2406919bf10b", "position": "left", "ad": { "visible": false, "openDelay": 15, "closeDelay": 10}, "chicklets": { "items": ["twitter", "facebook", "email", "sharethis"]}};
+			var options={ "publisher": "f091e7ed-4f29-4980-a7c4-2406919bf10b", "position": "left", "ad": { "visible": false, "openDelay": 15000, "closeDelay": 1000}, "chicklets": { "items": ["twitter", "facebook", "email", "sharethis"]}};
 			var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
 		</script>
 		
@@ -188,7 +188,6 @@
 			ga('create', 'UA-58004061-1', 'auto');
 			ga('send', 'pageview');
 		</script>
-		
 	</body>
 
 </html>
