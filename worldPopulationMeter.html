@@ -1,0 +1,161 @@
+<!doctype html>
+
+<html>
+
+	<head>
+		<!--
+		This is a sketch that I wanted to try for more than a year now
+		The statement is borrowed from an image that I saw online. I loved
+		the concept so much and I loved that they didn't round the number
+		to 7 billion. Still it was disappointing that the population wasn't
+		changing live! So here it is! This is the data driven version of the
+		same image!
+
+		Anyways... It's good to finally get this out. So many thanks to
+		http://www.javascriptkit.com for their source code to estimate world
+		population, and all the online available resources for web development!
+		-->
+		
+		<title> World Population Meter</title>
+		
+		<!-- libraries for share this
+		<script type="text/javascript">var switchTo5x=true;</script>
+		<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+		<script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>
+		-->
+	</head>
+	
+	<!-- Will move this to .css file later -->
+	<style type="text/css">
+		
+		html,
+		body {
+			margin:0;
+			padding:0;
+			height:98%;
+			background-color: orange;
+			color: white;
+		}
+		
+		.wrapper {
+			min-height:100%;
+			position:relative
+		}
+		
+		.content {
+			/* padding-bottom:.2em;   /* Height of the footer element */
+			font-family : Courier New;
+			font-size: 3em;
+			text-align:center; /* Center Horrizontally */
+			position: absolute; /* Center Vertically */
+    		top: 50%;
+    		left: 50%;
+    		margin-right: -50%;
+    		transform: translate(-50%, -50%)
+		}
+		
+		.footer {
+			width:100%;
+			height:.2em; /* Height of the footer element */
+			position:absolute;
+			bottom:0; 
+			left:0;
+			font: normal 11px Arial;
+		}
+	</style>
+	
+
+	<body>
+
+		<script type="text/javascript">
+
+			/*
+			* World Populution Counter - By JavaScript Kit (http://www.javascriptkit.com)
+			* Based on code by Adam Brown
+			* This notice MUST stay intact for use
+			* Visit JavaScript Kit (http://www.javascriptkit.com) for this script and more
+			*/
+
+			function maind(){
+				startdate = new Date();
+				now(startdate.getYear(),startdate.getMonth(),startdate.getDate(),startdate.getHours(),startdate.getMinutes(),startdate.getSeconds())
+			}
+
+
+			function ChangeValue(number,pv){
+				numberstring ="";
+				var j=0;
+				var i=0;
+				while (number > 1)
+				 { 
+				    numberstring = (Math.round(number-0.5) % 10) + numberstring;
+				    number= number / 10;
+				    j++
+				    if (number > 1 && j==3) { 
+						numberstring = "," + numberstring; 
+						j=0}
+				    i++
+				 }
+
+				 numberstring=numberstring;
+
+				if (pv==1) {document.getElementById("worldpop").innerHTML=numberstring;}
+			}
+
+
+			function now(year,month,date,hours,minutes,seconds){       
+				startdatum = new Date(year,month,date,hours,minutes,seconds)
+
+				var now = 5600000000.0
+				var now2 = 5690000000.0
+				var groeipercentage = (now2 - now) / now *100
+				var groeiperseconde = (now * (groeipercentage/100))/365.0/24.0/60.0/60.0 
+				nu = new Date ()                
+				schuldstartdatum = new Date (96,1,1)                            
+				secondenoppagina = (nu.getTime() - startdatum.getTime())/1000
+				totaleschuld= (nu.getTime() - schuldstartdatum.getTime())/1000*groeiperseconde + now
+				ChangeValue(totaleschuld,1);
+
+
+				timerID = setTimeout("now(startdatum.getYear(),startdatum.getMonth(),startdatum.getDate(),startdatum.getHours(),startdatum.getMinutes(),startdatum.getSeconds())",200)
+			}
+
+				window.onload=maind
+		</script>
+		
+		<div class="wrapper">
+			
+			<div class="content">
+						<!-- Organize the text so it looks like a heart -->
+						Out of
+						<br><strong><span id="worldpop"></span></strong>
+						<br>people in the world
+						<br>
+						<br>
+						<br><strong>I choose you</strong>
+						<br>
+						<br>!
+			</div>
+
+			<!-- credits -->
+			<div class = "footer">
+				&#169 2014-2015, <a href = "https://www.linkedin.com/in/mostaphasadeghipour">Mostapha Sadeghipour Roudsari</a>
+				<br>
+				World population estimation script is provided by
+				<a href="http://www.javascriptkit.com">JavaScript Kit</a>
+			</div>
+		
+		</div> <!--end of wrapper-->
+
+
+		<!-- share this side bar
+		<script type="text/javascript">stLight.options({publisher: "f091e7ed-4f29-4980-a7c4-2406919bf10b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+		<script>
+		var options={ "publisher": "f091e7ed-4f29-4980-a7c4-2406919bf10b", "position": "left", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0}, "chicklets": { "items": ["twitter", "facebook", "email", "sharethis"]}};
+		var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
+		</script>
+		-->
+		
+	</body>
+
+</html>
