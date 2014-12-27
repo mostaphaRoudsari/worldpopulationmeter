@@ -2,29 +2,6 @@
 
 <html>
 
-	<head>
-		<!--
-		This is a sketch that I wanted to try for more than a year now
-		The statement is borrowed from an image that I saw online. I loved
-		the concept so much and I loved that they didn't round the number
-		to 7 billion. Still it was disappointing that the population wasn't
-		changing live! So here it is! This is the data driven version of the
-		same image!
-
-		Anyways... It's good to finally get this out. So many thanks to
-		http://www.javascriptkit.com for their source code to estimate world
-		population, and all the online available resources for web development!
-		-->
-		
-		<title> World Population Meter</title>
-		
-		<!-- libraries for share this -->
-		<script type="text/javascript">var switchTo5x=true;</script>
-		<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-		<script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>
-		
-	</head>
-	
 	<!-- Will move this to .css file later -->
 	<style type="text/css">
 		
@@ -51,7 +28,8 @@
     		top: 50%;
     		left: 50%;
     		margin-right: -50%;
-    		transform: translate(-50%, -50%)
+    		transform: translate(-50%, -50%);
+    		transition: font-size 1s;
 		}
 		
 		.footer {
@@ -63,8 +41,32 @@
 			font: normal 11px Arial;
 		}
 	</style>
-	
 
+	<head>
+		<!--
+		This is a sketch that I wanted to try for more than a year now
+		The statement is borrowed from an image that I saw online. I loved
+		the concept so much and I loved that they didn't round the number
+		to 7 billion. Still it was disappointing that the population wasn't
+		changing live! So here it is! This is the data driven version of the
+		same image!
+
+		Anyways... It's good to finally get this out. So many thanks to
+		http://www.javascriptkit.com for their source code to estimate world
+		population, and all the online available resources for web development!
+		-->
+		
+		<title> World Population Meter ;)</title>
+		
+		<!-- libraries for share this -->
+		<script type="text/javascript">var switchTo5x=true;</script>
+		<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+		<script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>
+		 
+
+		 <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+	</head>
+	
 	<body>
 
 		<script type="text/javascript">
@@ -127,14 +129,35 @@
 			
 			<div class="content">
 						<!-- Organize the text so it looks like a heart -->
-						Out of
-						<br><strong><span id="worldpop"></span></strong>
-						<br>people in the world
+						<div id="delayedText1" style="opacity:0">Out of</div>
+						<strong><span id="worldpop"></span></strong>
+						<br>
+						<div id="delayedText2" style="opacity:0">
+							people in the world
+						</div>
 						<br>
 						<br>
-						<br><strong>I choose you</strong>
-						<br>
-						<br>!
+						<div id="delayedText3" style="opacity:0">
+							<strong>I</strong>
+							<span id="delayedText4" style="opacity:0">
+								<strong> choose</strong>
+							</span>
+							<span id="delayedText5" style="opacity:0">
+								<strong> you</strong>
+							</span>
+							<p></p><p></p>
+							<span id="delayedText6" style="opacity:0">!</span>
+						</div>
+
+					<script type="text/javascript">
+						$("#delayedText1").delay(500).animate({"opacity": "1"}, 700); //out of
+						$("#delayedText2").delay(2500).animate({"opacity": "1"}, 700); //people in the world
+						$("#delayedText3").delay(5000).animate({"opacity": "1"}, 700); //I
+						$("#delayedText4").delay(6000).animate({"opacity": "1"}, 700); //Choose
+						$("#delayedText5").delay(7000).animate({"opacity": "1"}, 700); //You
+						$("#delayedText6").delay(8000).animate({"opacity": "1"}, 700); //!
+					</script>
+
 			</div>
 
 			<!-- credits -->
@@ -148,14 +171,14 @@
 		</div> <!--end of wrapper-->
 
 
-		<!-- share this side bar -->
+		<!-- share this side bar-->
 		<script type="text/javascript">stLight.options({publisher: "f091e7ed-4f29-4980-a7c4-2406919bf10b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
 		<script>
 			var options={ "publisher": "f091e7ed-4f29-4980-a7c4-2406919bf10b", "position": "left", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0}, "chicklets": { "items": ["twitter", "facebook", "email", "sharethis"]}};
 			var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
 		</script>
 		
-		<!-- google analytics -->
+		<!-- google analytics-->
 		<script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -165,7 +188,7 @@
 			ga('create', 'UA-58004061-1', 'auto');
 			ga('send', 'pageview');
 		</script>
-
+		
 	</body>
 
 </html>
