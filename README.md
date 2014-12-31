@@ -1,10 +1,10 @@
 worldpopulationmeter
 ====================
 
-(http://mostapharoudsari.github.io/worldpopulationmeter/) is a sketch that I wanted to try for more than a year now. The statement is borrowed from an image that I saw online.
+(http://mostapharoudsari.github.io/worldpopulationmeter/) is an idea that I wanted to give it a try for more than a year now, after I saw a web post with the same statement. I'm pretty sure you have seen similar statements too. They start with "out of 7 billion people in the world" and then add another statemnet; so in that sense the idea is not new.
 
-I loved the concept so much and I loved that they didn't round the number to 7 billion. Still it was disappointing that the population wasn't changing live.
-
-So here it is! This is the data driven version of the same image! I like how it looks like a heart and change of the number reminds me of heart beats or maybe I'm the only one who think it looks like that!
+The only change that I made was using a real-time estimation for world population so the number is closer to reality and the message looks more like what you would expect to see in 2014-2015!
 
 So many thanks to http://www.javascriptkit.com for their source code to estimate world population, and all the online available resources for web development!
+
+I hope you like it and happy to 2015!
